@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  imageSrc: string | ImageMetadata;
+  alt: string;
+  title: string;
+  meta: string;
+  subtitle: string;
+  delayMs?: number;
+  badge?: string;
+  titleClass?: string;
+  metaClass?: string;
+}
+
+const {
+  imageSrc,
+  alt,
+  title,
+  meta,
+  subtitle,
+  delayMs = 0,
+  badge,
+  titleClass = "text-lg",
+  metaClass = "text-[10px]"
+} = Astro.props as Props;
+---
+
+<div class="fade-up group cursor-default" style={`transition-delay: ${delayMs}ms;`}>
+  <div class="w-full aspect-[4/3] overflow-hidden border border-line mb-6 relative">
+    {typeof imageSrc === "string" ? (
+      <Image
+        src={imageSrc}
+        alt={alt}
+        width={2070}
+        height={1553}
+        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+      />
+    ) : (
+      <Image
+        src={imageSrc}
+        alt={alt}
+        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+      />
+    )}
+  </div>
+  {badge ? (
+    <span class="inline-block border border-sand/30 px-3 py-1 text-[9px] uppercase tracking-widest text-sand mb-4">{badge}</span>
+  ) : null}
+  <h3 class={`${titleClass} font-serif text-concrete mb-2 group-hover:text-sand transition-colors`}>{title}</h3>
+  <p class={`text-concrete/50 font-light ${metaClass} tracking-widest uppercase mb-4`}>{meta}</p>
+  <p class="text-concrete/80 text-xs italic">{subtitle}</p>
+</div>

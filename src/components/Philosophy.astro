@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="philosophie" class="py-32 px-6 md:px-16 bg-onyx border-b border-line relative">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+    <div class="order-2 lg:order-1 relative fade-up">
+      <div class="absolute inset-0 border border-line translate-x-6 translate-y-6 pointer-events-none hidden md:block"></div>
+      <Image
+        src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop"
+        alt="Clés de voiture, détail luxe"
+        width={1000}
+        height={1250}
+        class="w-full h-auto aspect-[4/5] object-cover grayscale contrast-125"
+      />
+    </div>
+    <div class="order-1 lg:order-2 fade-up">
+      <p class="text-[10px] uppercase tracking-[0.3em] text-sand mb-6">L'Architecte de votre projet</p>
+      <h2 class="text-3xl md:text-5xl font-serif text-concrete mb-10 leading-tight">
+        Une exigence absolue au service de <span class="italic text-concrete/50">votre sérénité.</span>
+      </h2>
+      <div class="text-concrete/60 font-light text-sm leading-relaxed space-y-6">
+        <p>
+          GB CONSULT n'est pas un simple mandataire de volume. C'est la concrétisation d'une expertise technique et
+          juridique du marché allemand, destinée à une clientèle francilienne (basée à Massy) exigeante.
+        </p>
+        <p>
+          Ici, nous ne laissons aucune place au hasard. Chaque véhicule sourcé est inspecté minutieusement via les
+          réseaux officiels (Audi, BMW, Mercedes, Porsche). Chaque importation est orchestrée avec la précision d'un
+          horloger.
+        </p>
+        <p>
+          Notre promesse ? Transformer la complexité des frontières et des taxes en une expérience limpide, sécurisée
+          et profondément humaine.
+        </p>
+      </div>
+
+      <div class="mt-12 flex flex-col items-start gap-8">
+        <div class="border-l-2 border-sand pl-6 py-1">
+          <p class="font-serif text-xl md:text-2xl italic text-concrete/90">"L'importation ne doit plus jamais être une source d'anxiété."</p>
+          <p class="text-[10px] uppercase tracking-[0.2em] mt-4 text-concrete/50 font-bold">L'Équipe GB CONSULT</p>
+        </div>
+
+        <a href="#dossier" class="inline-flex items-center gap-2 text-concrete text-[10px] uppercase tracking-widest font-bold hover:text-sand transition-colors group">
+          Confier mon projet d'importation <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

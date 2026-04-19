@@ -1,0 +1,191 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-void text-concrete font-sans antialiased selection:bg-sand selection:text-void overflow-x-hidden">
+    <div class="noise"></div>
+
+    <a
+      href="https://wa.me/33753981787?text=Bonjour%20GB%20CONSULT,%20je%20souhaite%20vous%20confier%20une%20recherche%20d'importation."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-40 bg-concrete text-void px-5 py-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center justify-center gap-3 mix-blend-difference group"
+      aria-label="Contactez-nous sur WhatsApp"
+    >
+      <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"></path></svg>
+      <span class="text-[10px] uppercase tracking-widest font-bold whitespace-nowrap">Ligne Directe</span>
+    </a>
+
+    <header
+      class="fixed w-full top-0 z-50 mix-blend-difference px-6 py-6 flex justify-between items-center transition-all duration-500"
+      id="navbar"
+    >
+      <a href="#" class="text-xl font-sans tracking-[0.2em] uppercase font-bold text-concrete">GB CONSULT.</a>
+
+      <div class="hidden md:flex items-center gap-10">
+        <nav class="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-concrete/70 font-medium">
+          <a href="#vision" class="hover:text-concrete transition-colors">Vision</a>
+          <a href="#philosophie" class="hover:text-concrete transition-colors">Notre Approche</a>
+          <a href="#process" class="hover:text-concrete transition-colors">Méthode</a>
+          <a href="#catalogue" class="hover:text-concrete transition-colors">Catalogue</a>
+          <a href="#moto" class="hover:text-concrete transition-colors">Motos</a>
+          <a href="#faq" class="hover:text-concrete transition-colors">FAQ</a>
+        </nav>
+        <a
+          href="#dossier"
+          class="text-[10px] uppercase tracking-widest border border-concrete/30 px-5 py-2 hover:bg-concrete hover:text-void transition-colors"
+        >
+          Lancer un projet
+        </a>
+      </div>
+
+      <button id="burger-btn" class="md:hidden flex flex-col gap-[6px] w-8 h-8 justify-center items-end z-[60] relative">
+        <span class="block w-full h-[1px] bg-concrete transition-transform duration-300 origin-right"></span>
+        <span class="block w-3/4 h-[1px] bg-concrete transition-transform duration-300 origin-right"></span>
+      </button>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-onyx z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-700 ease-in-out"
+    >
+      <nav class="flex flex-col gap-6 text-3xl font-serif">
+        <a href="#vision" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">01. Vision</a>
+        <a href="#philosophie" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">02. Notre Approche</a>
+        <a href="#process" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">03. Méthodologie</a>
+        <a href="#catalogue" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">04. Catalogue</a>
+        <a href="#moto" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">05. Motos</a>
+        <a href="#faq" class="mobile-link text-concrete/50 hover:text-concrete transition-colors">06. FAQ</a>
+        <a href="#dossier" class="mobile-link text-sand italic mt-4">→ Confier un projet</a>
+      </nav>
+      <div class="mt-16 text-[10px] uppercase tracking-widest text-concrete/40 flex flex-col gap-2">
+        <a href="mailto:contact@gb-consult.fr">contact@gb-consult.fr</a>
+        <a href="tel:+33753981787">07 53 98 17 87</a>
+      </div>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-onyx border-t border-line py-16 px-6 md:px-16">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-concrete/50">
+        <div class="md:col-span-2">
+          <p class="text-xl font-sans tracking-[0.2em] font-bold text-concrete mb-6 uppercase">GB CONSULT.</p>
+          <p class="font-light leading-relaxed max-w-xs text-xs">
+            Spécialiste de l'importation sur-mesure de véhicules premium d'Allemagne. Transparence, sécurité et
+            immatriculation incluse.
+          </p>
+        </div>
+        <div>
+          <p class="text-concrete uppercase tracking-[0.2em] mb-6 text-[10px] font-bold">Bureau</p>
+          <ul class="space-y-3 font-light text-xs">
+            <li class="text-concrete/80">10 Rue de la Vieille Vigne<br />91300 MASSY, France</li>
+            <li>Sur rendez-vous uniquement</li>
+            <li class="pt-2"><a href="mailto:contact@gb-consult.fr" class="hover:text-concrete transition-colors">contact@gb-consult.fr</a></li>
+            <li><a href="tel:+33753981787" class="hover:text-concrete transition-colors">07 53 98 17 87</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-concrete uppercase tracking-[0.2em] mb-6 text-[10px] font-bold">Légal</p>
+          <ul class="space-y-3 font-light text-xs">
+            <li>SIREN : 944632264</li>
+            <li><a href="#" class="hover:text-concrete transition-colors">Mentions Légales</a></li>
+            <li><a href="#" class="hover:text-concrete transition-colors">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-16 pt-8 border-t border-line flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] uppercase tracking-widest text-concrete/40"
+      >
+        <div>© 2026 GB CONSULT. TOUS DROITS RÉSERVÉS.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -100px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".clip-text, .fade-up").forEach((el) => observer.observe(el));
+
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+              navbar.classList.add("py-4");
+              navbar.classList.remove("py-6");
+            } else {
+              navbar.classList.add("py-6");
+              navbar.classList.remove("py-4");
+            }
+          });
+        }
+
+        const burgerBtn = document.getElementById("burger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (!burgerBtn || !mobileMenu) {
+          return;
+        }
+
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        const lines = burgerBtn.querySelectorAll<HTMLSpanElement>("span");
+        let menuOpen = false;
+
+        const toggleMenu = () => {
+          menuOpen = !menuOpen;
+          if (menuOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            if (lines[0]) lines[0].style.transform = "translateY(3.5px) rotate(45deg)";
+            if (lines[1]) {
+              lines[1].style.width = "100%";
+              lines[1].style.transform = "translateY(-3.5px) rotate(-45deg)";
+            }
+            document.body.style.overflow = "hidden";
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            if (lines[0]) lines[0].style.transform = "none";
+            if (lines[1]) {
+              lines[1].style.width = "75%";
+              lines[1].style.transform = "none";
+            }
+            document.body.style.overflow = "auto";
+          }
+        };
+
+        burgerBtn.addEventListener("click", toggleMenu);
+        mobileLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+      });
+    </script>
+  </body>
+</html>

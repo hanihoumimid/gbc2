@@ -1,0 +1,139 @@
+<section id="dossier" class="py-32 px-6 md:px-16 bg-void relative border-t border-line">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+    <div class="lg:col-span-5 fade-up">
+      <h2 class="text-4xl md:text-6xl font-serif mb-6">Lancer votre <br /><span class="italic text-sand">Recherche.</span></h2>
+      <p class="text-concrete/60 font-light text-sm leading-relaxed mb-12 max-w-md">
+        Décrivez le véhicule que vous convoitez via ce formulaire. Il vous redirigera vers une discussion WhatsApp
+        directe avec notre équipe pour une première sélection de véhicules correspondants.
+      </p>
+      <div class="hidden lg:block">
+        <p class="text-[10px] uppercase tracking-widest text-concrete/40 mb-2">Ligne Directe & WhatsApp</p>
+        <p class="text-sm tracking-widest font-serif"><a href="tel:+33753981787" class="text-sand hover:text-concrete transition-colors">07 53 98 17 87</a></p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 fade-up">
+      <form id="whatsapp-form" class="space-y-10">
+        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-sand mb-8 border-b border-line pb-4">
+          Étude gratuite et sans engagement • Réponse sous 24h
+        </p>
+
+        <div class="flex flex-col md:flex-row border-b border-line pb-6 gap-8">
+          <label class="cursor-pointer group flex items-center gap-3">
+            <input type="radio" name="projet_type" value="Automobile" class="peer sr-only" checked />
+            <span class="w-3 h-3 rounded-full border border-concrete peer-checked:bg-sand peer-checked:border-sand transition-all"></span>
+            <span class="text-xs uppercase tracking-widest text-concrete/50 peer-checked:text-concrete">Recherche Automobile</span>
+          </label>
+          <label class="cursor-pointer group flex items-center gap-3">
+            <input type="radio" name="projet_type" value="Moto" class="peer sr-only" />
+            <span class="w-3 h-3 rounded-full border border-concrete peer-checked:bg-sand peer-checked:border-sand transition-all"></span>
+            <span class="text-xs uppercase tracking-widest text-concrete/50 peer-checked:text-concrete">Recherche Moto</span>
+          </label>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="relative">
+            <input type="text" id="form_marque" required class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors peer placeholder-transparent" placeholder="Marque & Modèle" />
+            <label id="label_marque" for="form_marque" class="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-concrete/50 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-sand pointer-events-none">Marque & Modèle ciblé *</label>
+          </div>
+          <div class="relative">
+            <select id="form_budget" required class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors cursor-pointer">
+              <option value="" disabled selected class="bg-onyx text-concrete/50" id="option_budget_default">Budget estimé (Import inclus) *</option>
+              <option value="Moins de 30 000 €" class="bg-onyx">&lt; 30 000 €</option>
+              <option value="Entre 30 000 € et 60 000 €" class="bg-onyx">30 000 € - 60 000 €</option>
+              <option value="Entre 60 000 € et 100 000 €" class="bg-onyx">60 000 € - 100 000 €</option>
+              <option value="Plus de 100 000 €" class="bg-onyx">> 100 000 €</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="relative">
+            <input type="text" id="form_cp" required class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors peer placeholder-transparent" placeholder="Code Postal" />
+            <label for="form_cp" class="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-concrete/50 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-sand pointer-events-none">Votre Code Postal *</label>
+          </div>
+          <div class="relative">
+            <input type="text" id="form_details" class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors peer placeholder-transparent" placeholder="Année, Km, Finition..." />
+            <label for="form_details" class="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-concrete/50 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-sand pointer-events-none">Année, Km, Finition (Optionnel)</label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="relative">
+            <input type="text" id="form_nom" required class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors peer placeholder-transparent" placeholder="Nom complet" />
+            <label for="form_nom" class="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-concrete/50 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-sand pointer-events-none">Nom & Prénom *</label>
+          </div>
+          <div class="relative">
+            <input type="email" id="form_email" required class="w-full bg-transparent border-b border-line text-concrete text-sm py-2 focus:border-sand transition-colors peer placeholder-transparent" placeholder="Email" />
+            <label for="form_email" class="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-concrete/50 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-sand pointer-events-none">Adresse Email *</label>
+          </div>
+        </div>
+
+        <button type="submit" class="group flex items-center justify-between w-full bg-concrete text-void hover:bg-white hover:scale-[1.02] p-5 transition-all mt-10">
+          <span class="text-xs uppercase tracking-[0.2em] font-semibold flex items-center gap-3">
+            Lancer via WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"></path></svg>
+          </span>
+          <span class="transform group-hover:translate-x-2 transition-transform">→</span>
+        </button>
+
+        <p class="text-[10px] text-center text-concrete/40 uppercase tracking-widest mt-4">
+          En cas de difficulté, contactez directement le <a href="tel:+33753981787" class="text-sand hover:text-concrete transition-colors">07 53 98 17 87</a>.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const radioProjets = document.querySelectorAll<HTMLInputElement>('input[name="projet_type"]');
+    const waForm = document.getElementById("whatsapp-form");
+
+    if (!waForm) {
+      return;
+    }
+
+    waForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let typeProjet = "";
+      for (const radio of radioProjets) {
+        if (radio.checked) {
+          typeProjet = radio.value;
+          break;
+        }
+      }
+
+      const marqueInput = document.getElementById("form_marque");
+      const budgetSelect = document.getElementById("form_budget");
+      const cpInput = document.getElementById("form_cp");
+      const detailsInput = document.getElementById("form_details");
+      const nomInput = document.getElementById("form_nom");
+      const emailInput = document.getElementById("form_email");
+
+      if (
+        !(marqueInput instanceof HTMLInputElement) ||
+        !(budgetSelect instanceof HTMLSelectElement) ||
+        !(cpInput instanceof HTMLInputElement) ||
+        !(detailsInput instanceof HTMLInputElement) ||
+        !(nomInput instanceof HTMLInputElement) ||
+        !(emailInput instanceof HTMLInputElement)
+      ) {
+        return;
+      }
+
+      const marque = marqueInput.value;
+      const budget = budgetSelect.options[budgetSelect.selectedIndex]?.text ?? "";
+      const cp = cpInput.value;
+      const details = detailsInput.value || "Non précisé";
+      const nom = nomInput.value;
+      const email = emailInput.value;
+
+      const message = `*DEMANDE IMPORT - GB CONSULT*%0A%0ABonjour, je souhaite discuter d'un projet d'importation depuis l'Allemagne :%0A%0A*1. LE VÉHICULE*%0A- Type : ${typeProjet}%0A- Modèle : ${marque}%0A- Budget : ${budget}%0A- Détails (Année/Km) : ${details}%0A%0A*2. COORDONNÉES*%0A- Nom : ${nom}%0A- CP : ${cp}%0A- Email : ${email}%0A%0APouvons-nous en discuter ?`;
+
+      const whatsappUrl = `https://wa.me/33753981787?text=${message}`;
+      window.open(whatsappUrl, "_blank");
+    });
+  });
+</script>

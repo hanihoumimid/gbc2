@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="relative min-h-screen flex flex-col justify-center px-6 md:px-16 pt-20">
+  <div class="absolute inset-0 z-[-1] opacity-30 md:opacity-40">
+    <Image
+      src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2000&auto=format&fit=crop"
+      alt="Porsche Luxe Import"
+      width={2000}
+      height={1333}
+      class="w-full h-full object-cover grayscale brightness-50 contrast-125"
+    />
+  </div>
+
+  <div class="max-w-7xl mx-auto w-full mt-10">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-12">
+      <p class="fade-up text-[10px] md:text-xs uppercase tracking-[0.3em] text-concrete/60 mb-4 md:mb-0 max-w-xs leading-relaxed">
+        Importation Sur-Mesure<br />
+        Véhicules Premium Allemands<br />
+        Massy (91), France.
+      </p>
+      <p class="fade-up text-sm font-serif italic text-sand md:text-right">
+        "L'excellence allemande, importée pour vous."
+      </p>
+    </div>
+
+    <h1 class="text-[12vw] md:text-[8.5vw] leading-[0.85] font-serif uppercase text-concrete tracking-tighter">
+      <span class="block clip-text">L'Allemagne.</span>
+      <span class="block clip-text italic text-concrete/80 ml-[5vw]">Importée.</span>
+    </h1>
+
+    <div class="md:ml-[5vw]">
+      <p class="fade-up text-concrete/70 font-light text-sm md:text-base max-w-xl mt-8 leading-relaxed" style="transition-delay: 100ms;">
+        Confiez-nous la recherche et l'importation de votre véhicule premium depuis l'Allemagne (Audi, BMW, Porsche,
+        Mercedes). Sans intermédiaire, avec une transparence totale sur l'historique et l'immatriculation française
+        incluse.
+      </p>
+
+      <div class="fade-up flex flex-wrap items-center gap-4 md:gap-8 mt-8 text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-sand font-bold" style="transition-delay: 150ms;">
+        <span>Sourcing Direct DE</span>
+        <span class="hidden md:inline text-concrete/30">•</span>
+        <span>Clé en main (FR)</span>
+        <span class="hidden md:inline text-concrete/30">•</span>
+        <span>Garantie Européenne</span>
+      </div>
+
+      <div class="mt-10 fade-up" style="transition-delay: 200ms;">
+        <a href="#dossier" class="group inline-flex items-center justify-between gap-8 bg-concrete text-void px-8 py-4 text-[10px] md:text-xs uppercase tracking-widest font-bold hover:bg-white hover:scale-[1.02] transition-all duration-300">
+          <span>Configurer mon import</span>
+          <span class="transform group-hover:translate-x-2 transition-transform">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-6 md:left-16 flex items-center gap-4 fade-up">
+    <div class="w-[1px] h-12 bg-line overflow-hidden relative">
+      <div class="absolute top-0 left-0 w-full h-full bg-concrete scroll-indicator"></div>
+    </div>
+    <span class="text-[9px] uppercase tracking-[0.2em] -rotate-90 origin-left mt-8 text-concrete/50">Scroll</span>
+  </div>
+</section>

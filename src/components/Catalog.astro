@@ -1,0 +1,107 @@
+---
+import VehicleCard from "./VehicleCard.astro";
+import a3sb from "../assets/a3sb.png";
+import g8gtd from "../assets/g8gtd.png";
+import mglb200 from "../assets/mglb200.png";
+---
+
+<section id="catalogue" class="py-32 px-6 md:px-16 bg-void border-b border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 fade-up">
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.3em] text-sand mb-4">Exemples de Sourcing</p>
+        <h2 class="text-3xl md:text-5xl font-serif text-concrete">Nos véhicules sourçables.</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <VehicleCard
+        imageSrc="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2070&auto=format&fit=crop"
+        alt="Porsche 911"
+        title="Porsche 911 Carrera S"
+        meta="Ex: 2021 • < 30 000 km"
+        subtitle="Modèle sourçable sur demande"
+      />
+      <VehicleCard
+        imageSrc={mglb200}
+        alt="Mercedes GLB 200 AMG Line"
+        title="Mercedes GLB 200 AMG Line"
+        meta="Ex: 2020 • < 29 000 km"
+        subtitle="Modèle sourçable sur demande"
+        delayMs={100}
+      />
+      <VehicleCard
+        imageSrc={g8gtd}
+        alt="Volkswagen Golf 8 GTD"
+        title="Volkswagen Golf 8 GTD"
+        meta="Ex: 2023 • < 15 000 km"
+        subtitle="Modèle sourçable sur demande"
+        delayMs={200}
+      />
+      <VehicleCard
+        imageSrc={a3sb}
+        alt="Audi A3 Sportback S-Line"
+        title="Audi A3 Sportback S-Line"
+        meta="Ex: 2024 • < 28 000 km"
+        subtitle="Modèle sourçable sur demande"
+        delayMs={300}
+      />
+    </div>
+  </div>
+</section>
+
+<section id="moto" class="py-32 px-6 md:px-16 bg-onyx border-b border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 fade-up">
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.3em] text-sand mb-4">2 Roues Premium</p>
+        <h2 class="text-3xl md:text-5xl font-serif text-concrete">Motos Allemandes.</h2>
+        <p class="text-concrete/60 font-light text-sm mt-4 max-w-2xl">
+          Nous proposons aussi des motos premium en arrivage, et du sourcing sur-mesure selon votre usage : route,
+          sport-GT ou aventure.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <VehicleCard
+        imageSrc="https://live.staticflickr.com/65535/52684830432_24579a09cc_b.jpg"
+        alt="BMW S 1000 RR"
+        badge="Sport"
+        title="BMW S 1000 RR"
+        meta="Ex: 2021 • < 18 000 km"
+        subtitle="Disponible selon arrivage"
+        titleClass="text-xl"
+        metaClass="text-xs"
+      />
+      <VehicleCard
+        imageSrc="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070&auto=format&fit=crop"
+        alt="BMW R 1250 GS"
+        badge="Adventure"
+        title="BMW R 1250 GS"
+        meta="Ex: 2022 • < 25 000 km"
+        subtitle="Disponible selon arrivage"
+        titleClass="text-xl"
+        metaClass="text-xs"
+        delayMs={100}
+      />
+      <VehicleCard
+        imageSrc="https://mototribu.com/wp-content/uploads/2023/05/bmw_r18_roctane_2023_017.jpg"
+        alt="BMW R 18"
+        badge="Cruiser"
+        title="BMW R 18"
+        meta="Ex: 2023 • < 8 000 km"
+        subtitle="Sourçable sur demande"
+        titleClass="text-xl"
+        metaClass="text-xs"
+        delayMs={200}
+      />
+    </div>
+
+    <div class="mt-20 text-center fade-up">
+      <a href="#dossier" class="inline-block border border-concrete/20 px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-concrete hover:bg-concrete hover:text-void transition-colors">
+        Rechercher une Moto Allemande
+      </a>
+    </div>
+  </div>
+</section>
