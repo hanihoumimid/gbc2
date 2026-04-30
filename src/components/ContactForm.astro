@@ -69,6 +69,14 @@
           </div>
         </div>
 
+        <div class="border-b border-line pb-6">
+          <label class="cursor-pointer group flex items-center gap-3">
+            <input type="checkbox" id="form_financement" class="peer sr-only" />
+            <span class="w-3 h-3 border border-concrete peer-checked:bg-sand peer-checked:border-sand transition-all"></span>
+            <span class="text-xs uppercase tracking-widest text-concrete/50 peer-checked:text-concrete">Je souhaite étudier une solution de financement</span>
+          </label>
+        </div>
+
         <button type="submit" class="group flex items-center justify-between w-full bg-concrete text-void hover:bg-white hover:scale-[1.02] p-5 transition-all mt-10">
           <span class="text-xs uppercase tracking-[0.2em] font-semibold flex items-center gap-3">
             Lancer via WhatsApp
@@ -111,6 +119,7 @@
       const detailsInput = document.getElementById("form_details");
       const nomInput = document.getElementById("form_nom");
       const emailInput = document.getElementById("form_email");
+      const financementInput = document.getElementById("form_financement");
 
       if (
         !(marqueInput instanceof HTMLInputElement) ||
@@ -129,8 +138,10 @@
       const details = detailsInput.value || "Non précisé";
       const nom = nomInput.value;
       const email = emailInput.value;
+      const financementWanted = financementInput instanceof HTMLInputElement && financementInput.checked;
+      const financementBlock = financementWanted ? `*FINANCEMENT* : Étude souhaitée%0A%0A` : "";
 
-      const message = `*DEMANDE IMPORT - GB CONSULT*%0A%0ABonjour, je souhaite discuter d'un projet d'importation depuis l'Allemagne :%0A%0A*1. LE VÉHICULE*%0A- Type : ${typeProjet}%0A- Modèle : ${marque}%0A- Budget : ${budget}%0A- Détails (Année/Km) : ${details}%0A%0A*2. COORDONNÉES*%0A- Nom : ${nom}%0A- CP : ${cp}%0A- Email : ${email}%0A%0APouvons-nous en discuter ?`;
+      const message = `*DEMANDE IMPORT - GB CONSULT*%0A%0ABonjour, je souhaite discuter d'un projet d'importation depuis l'Allemagne :%0A%0A*1. LE VÉHICULE*%0A- Type : ${typeProjet}%0A- Modèle : ${marque}%0A- Budget : ${budget}%0A- Détails (Année/Km) : ${details}%0A%0A${financementBlock}*2. COORDONNÉES*%0A- Nom : ${nom}%0A- CP : ${cp}%0A- Email : ${email}%0A%0APouvons-nous en discuter ?`;
 
       const whatsappUrl = `https://wa.me/33753981787?text=${message}`;
       window.open(whatsappUrl, "_blank");

@@ -8,6 +8,7 @@ interface Props {
   title: string;
   meta: string;
   subtitle: string;
+  price?: string;
   delayMs?: number;
   badge?: string;
   titleClass?: string;
@@ -20,6 +21,7 @@ const {
   title,
   meta,
   subtitle,
+  price,
   delayMs = 0,
   badge,
   titleClass = "text-lg",
@@ -50,5 +52,8 @@ const {
   ) : null}
   <h3 class={`${titleClass} font-serif text-concrete mb-2 group-hover:text-sand transition-colors`}>{title}</h3>
   <p class={`text-concrete/50 font-light ${metaClass} tracking-widest uppercase mb-4`}>{meta}</p>
+  {price ? (
+    <p class="font-serif text-sand text-base mb-2 tracking-wide">{price}</p>
+  ) : null}
   <p class="text-concrete/80 text-xs italic">{subtitle}</p>
 </div>
